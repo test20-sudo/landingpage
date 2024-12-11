@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --bg-color: #0a0a0a;
+    --text-color: #e0e0e0;
+    --accent-color: #4a4a4a;
+    --light-green: #90EE90;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(30,30,30,0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(50,50,50,0.3) 0%, transparent 50%);
+    animation: bg-shift 15s ease infinite;
+    z-index: -2;
+}
+
+.dot-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: dots-move 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes dots-move {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -100px -100px;
+    }
+}
+
+@keyframes bg-shift {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.center-gif {
+    max-width: 100%;
+    max-height: 50vh;
+    margin-bottom: 20px;
+}
+
+.green-shimmer {
+    font-size: 1.7rem;
+    font-weight: 600;
+    background: linear-gradient(45deg, #90EE90, #98FB98, #90EE90);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 10px rgba(144,238,144,0.2);
+    animation: shine 3s ease-in-out infinite;
+}
+
+.description {
+    font-size: 0.7rem;
+    margin-top: 10px;
+    color: var(--text-color);
+}
+
+@keyframes shine {
+    0%, 100% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 200% 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .green-shimmer {
+        font-size: 1.5rem;
+    }
+
+    .description {
+        font-size: 0.5rem;
+    }
+}
