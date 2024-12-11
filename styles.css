@@ -84,9 +84,9 @@ body {
     padding: 20px;
     position: relative;
 }
-
+/* shiny text can change for subsequent pages*/
 .shiny-text {
-    font-size: 2.5rem;
+    font-size: 2.5rem; 
     font-weight: 600;
     background: linear-gradient(45deg, #e0e0e0, #ffffff, #c0c0c0);
     background-clip: text;
