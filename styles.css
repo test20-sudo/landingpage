@@ -10,6 +10,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* Remove blue highlight on touch devices */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 body {
@@ -120,6 +128,8 @@ h2 {
     border-radius: 5px;
     transition: all 0.3s ease;
     overflow: hidden;
+    /* Remove default touch highlight */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .tab::before {
@@ -143,6 +153,12 @@ h2 {
 
 .tab:hover::before {
     transform: skew(-20deg) translateX(150%);
+}
+
+/* Prevent blue highlight on touch interactions */
+.tab:active {
+    background-color: transparent;
+    box-shadow: none;
 }
 
 @media (max-width: 600px) {
