@@ -3,33 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>about pradipto.</title>
-    <link rel="stylesheet" href="styles2.css">
+    <title>about.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles3.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<style>
+    a {
+            text-decoration: none;
+            color: inherit;
+        }
+</style>
 </head>
 <body>
+    <!-- Background Elements -->
     <div class="background-animation"></div>
     <div class="dot-animation"></div>
-    
-    <div class="container">
-        <img src="buildergif.gif" height="100px" width="100px" alt="Continuous GIF" class="center-gif">
-        
-        <div class="shiny-text green-shimmer">
-            let me cook.
-        </div>
-        
-        <div class="description">
-            website building in progress!<br><br>
-            writing the content, building elements and <del>procrastinating</del> thinking.
-        </div>
-        <br>
-        <nav class="tabs">
-            <a href="index.html" class="tab">go back</a>
-        </nav>
 
+    <!-- Main Content -->
+    <div class="container">
+        <header>
+            <h1 class="shiny-text">about.</h1>
+            <nav class="tabs">
+                <a href="index.html" class="tab">home</a>
+                <a href="work.html" class="tab">work</a>
+                <a href="socials.html" class="tab">socials</a>
+            </nav>
+        </header>
+
+        <main class="content">
+            <div class="profile-section">
+                <div class="profile-image-container">
+                    <div class="profile-image">
+                        <img src="pic1.jpg" alt="Profile Picture">
+                    </div>
+    
+                    <div class="personal-details-container">
+                        <div class="personal-detail-card name-card">
+                            <span class="detail-emoji">👤</span>
+                            <div class="detail-content">
+                                <span class="detail-label">Name:</span>
+                                <span class="detail-value">Pradipto Chowdhury</span>
+                            </div>
+                        </div>
+                        <div class="personal-detail-card height-card">
+                            <span class="detail-emoji">📏</span>
+                            <div class="detail-content">
+                                <span class="detail-label">Height:</span>
+                                <span class="detail-value">5'11"</span>
+                            </div>
+                        </div>
+                        <div class="personal-detail-card blood-card">
+                            <span class="detail-emoji">🩸</span>
+                            <div class="detail-content">
+                                <span class="detail-label">Blood Grp:</span>
+                                <span class="detail-value">B+</span>
+                            </div>
+                        </div>
+                        <div class="personal-detail-card age-card">
+                            <span class="detail-emoji">🗓️</span>
+                            <div class="detail-content">
+                                <span class="detail-label">Age:</span>
+                                <span id="age-value" class="detail-value">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="achievements-title">gallery 🏆</div>
+                    <div class="achievements-images">
+                        <div class="achievement-placeholder"></div>
+                        <div class="achievement-placeholder"></div>
+                        <div class="achievement-placeholder"></div>
+                    </div>
+                    <button class="achievements-more-btn"><a href="workinprogress.html">+ more</a></button> <!--remove anchor styling when needed-->
+                </div>
+                <div class="glass-card">
+                    <!-- Existing about text, fill in and add line breaks wherever neccessary -->
+                    <h2>intelligent automation 🚀</h2>
+                    <div class="about-text">
+                        <p>hey there! i'm pradipto, an enthusiast who's turning ai exploration into an art form - with a few laptop battle scars to prove it. <br><br>
+                            started as a web dev, but machine learning blindsided me faster than a gradient descent. i've managed to burn through a laptop or two in my pursuit of ai enlightenment (cooling systems, meet deep learning), proving that passion sometimes comes with a side of unintentional hardware sacrifice.
+                            <br> <br>thanks to some classic dad-professor nepotism, i snagged my first internship at indian institute of technology (indian school of mines), dhanbad. but i quickly leveled up to cold-emailing ninja status, landing research internships at indian institute of information technology ranchi (another great institute) and a dream internship at bio ai labs, the arctic university of norway. working under prof. dilip prasad - a true titan in this field - was a transformative experience that supercharged my research passion. my first accepted paper? let's just say it was more excitement than most people have on a friday night.
+                            <br><br>these days, i'm that mad scientist (not there yet, but give me time pls) brewing a cocktail of computer vision, llms, and physics-informed neural networks. building micro-products on twitter (X sounds honestly weird), pushing boundaries, and making ai do tricks that make people go "wait, what?" from awesome research labs to local/personal builds, i'm always exploring the bleeding edge of intelligent automation.
+                            i'm not a software engineer. i'm that machine learning guy who'd rather debug a neural network than solve a dsa problem. (seriously, mention some optimized sorting stuff and watch me twitch.) <br><br>my motto? innovation over convention, always.</p>
+                    </div>
+                </div>
+            </div>
+        </main> 
     </div>
+<!--make sure change the age calculator as per your birth date-->
+    <script src="age-calculator.js"></script>
+    
 </body>
 </html>
