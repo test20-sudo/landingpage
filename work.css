@@ -1,0 +1,400 @@
+:root {
+    --bg-color: #0a0a0a;
+    --text-color: #e0e0e0;
+    --accent-color: #4a4a4a;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --golden-metallic: linear-gradient(45deg, #FFD700, #DAA520, #B8860B);
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.work-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 25px;
+    padding: 2.5rem;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.work-card h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: lowercase;
+}
+
+.work-card p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.work-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.code-card {
+    background: linear-gradient(135deg, rgba(100, 200, 255, 0.08), rgba(0, 100, 200, 0.08));
+    position: relative;
+    overflow: hidden;
+}
+
+.research-card {
+    background: linear-gradient(135deg, rgba(255, 100, 200, 0.08), rgba(200, 50, 150, 0.08));
+    position: relative;
+    overflow: hidden;
+}
+
+.code-card::after,
+.research-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Add your image URL here. Example paths shown below: */
+}
+
+.code-card::after {
+    background-image: url('coding.jpg');  /* Replace with your code-related image */
+}
+
+.research-card::after {
+    background-image: url('study.jpg');  /* Replace with your research-related image */
+}
+
+.code-card:hover {
+    box-shadow: 0 0 30px rgba(100, 200, 255, 0.2);
+}
+
+.research-card:hover {
+    box-shadow: 0 0 30px rgba(255, 100, 200, 0.2);
+}
+
+.code-card:hover::after,
+.research-card:hover::after {
+    opacity: 0.05;  /* Reduced opacity for subtler effect with full-size image */
+}
+
+.description-box {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    border-radius: 25px;
+    padding: 2rem 2rem 1.5rem 2rem;
+    text-align: center;
+}
+
+.description-box p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.recap-btn {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border: 1px solid var(--glass-border);
+    color: var(--text-color);
+    padding: 14px 35px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.recap-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(100, 255, 150, 0.25);
+    border-color: rgba(100, 255, 150, 0.4);
+}
+
+.recap-btn:hover::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, 
+        rgba(100, 255, 150, 0.2),
+        rgba(100, 255, 150, 0.1)
+    );
+    border-radius: 32px;
+    z-index: -1;
+    animation: greenPulse 2s ease-in-out infinite;
+}
+
+@keyframes greenPulse {
+    0% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    margin-top: 5vh;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@media (max-width: 768px) {
+    .work-card {
+        padding: 2rem;
+        min-height: 200px;
+    }
+    
+    .work-card h2 {
+        font-size: 1.8rem;
+    }
+    
+    .description-box {
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.experience-section,
+.society-section {
+    margin-top: 2.5rem;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    text-transform: lowercase;
+    letter-spacing: -1px;
+}
+
+.company-grid,
+.society-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Reduced from 300px */
+    gap: 2rem; /* Reduced from 2.5rem */
+    margin-top: 2rem;
+}
+
+.company-card,
+.society-card {
+    position: relative;
+    min-height: 250px;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    background: rgba(93, 91, 91, 0.03);  /* Very subtle grey */
+}
+
+.society-image-container {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--glass-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.society-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.company-bg,
+.society-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.company-content,
+.society-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    background: rgba(20, 20, 20, 0.95);  /* Dark grey base */
+    backdrop-filter: blur(10px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+}
+
+.company-logo,
+.society-logo {
+    height: 60px;  /* Fixed height for logos */
+    margin-bottom: 0rem;
+    display: flex;
+    align-items: center;
+}
+
+.company-logo img,
+.society-logo img {
+    max-height: 100%;
+    max-width: 180px;  /* Limit width for longer logos */
+    object-fit: contain;
+}
+
+.company-name,
+.society-name {
+    font-size: 1.8rem; /* Reduced from 2rem */
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--text-color);
+}
+
+.company-years,
+.society-years {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.2rem;
+}
+
+/* Mirror Glow Effect */
+.company-card::before,
+.society-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(
+        135deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.1),
+        transparent 60%
+    );
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.company-card::after,
+.society-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        -45deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.08),
+        transparent 60%
+    );
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Hover Effects */
+.company-card:hover,
+.society-card:hover {
+    box-shadow: 
+        0 0 30px rgba(255, 255, 255, 0.05),
+        0 0 60px rgba(255, 255, 255, 0.03);
+    transform: translateY(-2px);
+}
+
+.company-card:hover::before,
+.society-card:hover::before,
+.company-card:hover::after,
+.society-card:hover::after {
+    opacity: 1;
+}
+
+.company-card:hover .company-content,
+.society-card:hover .society-content {
+    background: rgba(30, 30, 30, 0.85);  /* Slightly lighter grey on hover */
+    backdrop-filter: blur(15px);
+}
+
+@media (max-width: 768px) {
+    .company-card,
+    .society-card {
+        min-height: 220px;
+    }
+    
+    .company-content,
+    .society-content {
+        padding: 1.5rem;
+    }
+    
+    .company-name,
+    .society-name {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2.8rem;
+    }
+    
+    .company-logo,
+    .society-logo {
+        height: 35px;
+    }
+    
+    .company-logo img,
+    .society-logo img {
+        max-width: 150px;
+    }
+}

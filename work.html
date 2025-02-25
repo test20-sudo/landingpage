@@ -4,31 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>work.</title>
-    <link rel="stylesheet" href="styles2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="work.css">
+    <link rel="stylesheet" href="styles3.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 </head>
 <body>
+    <!-- Background Elements -->
     <div class="background-animation"></div>
     <div class="dot-animation"></div>
-    
+
+    <!-- Main Content -->
     <div class="container">
-        <img src="buildergif.gif" height="100px" width="100px" alt="Continuous GIF" class="center-gif">
-        
-        <div class="shiny-text green-shimmer">
-            let me cook.
+        <header>
+            <h1 class="shiny-text">work.</h1>
+            <nav class="tabs">
+                <a href="index.html" class="tab">home</a>
+                <a href="aboutme.html" class="tab">about</a>
+                <a href="socials.html" class="tab">socials</a>
+            </nav>
+        </header>
+
+        <!-- Work Sections -->
+        <div class="work-grid">
+            <a href="dev.html" class="work-card code-card">
+                <h2>code.craft</h2>
+                <p>development projects</p>
+            </a>
+            
+            <a href="research.html" class="work-card research-card">
+                <h2>discover.mind</h2>
+                <p>research and survey</p>
+            </a>
         </div>
-        
-        <div class="description">
-            website building in progress!<br><br>
-            writing the content, building elements and <del>procrastinating</del> thinking.
+
+        <!-- Description Section -->
+        <div class="description-box">
+            <p>"20% building, 30% debugging, 50% waiting for divine intervention"</p>
+            
+            <button class="recap-btn" onclick="openRecap()">my 2024 recap</button>
         </div>
-        <br>
-        <nav class="tabs">
-            <a href="index.html" class="tab">go back</a>
-        </nav>
+
+        <!-- Modal -->
+        <div id="recapModal" class="modal">
+            <span class="close" onclick="closeRecap()">&times;</span>
+            <img class="modal-content" id="recapImage">
+        </div>
+
+        <!-- Experience Section -->
+        <div class="experience-section">
+            <h2 class="section-title">exp.</h2>
+            <div class="company-grid">
+                <!-- Company Card 1 -->
+                <div class="company-card">
+                    <div class="company-content">
+                        <div class="company-logo">
+                            <img src="deloitte logo.png" alt="Microsoft Logo">
+                        </div>
+                        <div class="company-years">deloitte india</div>
+                        <div>intern(trainee)</div>
+                        <div class="company-years">jan'25 - present</div>
+                        <ul class="role-list">
+                            <li>automation stuffs using uipath</li>
+                            <li>dashboard training using power bi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Company Card 2 -->
+                <div class="company-card">
+                    <div class="company-content">
+                        <div class="company-logo">
+                            <img src="uit norway.png" alt="UiT Logo">
+                        </div>
+                        <div class="company-years">uit norway</div>
+                        <div>research intern</div>
+                        <div class="company-years">jan'24 - jul'24</div>
+                        <ul class="role-list">
+                            <li>worked on advanced image processing</li>
+                            <li>one month work as a visiting researcher</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Company Card 3 -->
+                <div class="company-card">
+                    <div class="company-content">
+                        <div class="company-logo">
+                            <img src="iitismdhanbad.png" alt="IIT(ISM) Logo">
+                        </div>
+                        <div class="company-years">iit(ism), dhanbad</div>
+                        <div>research intern</div>
+                        <div class="company-years">may'23 - jul'23</div>
+                        <ul class="role-list">
+                            <li>worked on state of the art image architectures</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Company Card 4 -->
+                <div class="company-card">
+                    <div class="company-content">
+                        <div class="company-logo">
+                            <img src="iiitranchi.png" alt="IIIT Logo">
+                        </div>
+                        <div class="company-years">iiit, ranchi</div>
+                        <div>research intern</div>
+                        <div class="company-years">jul'23 - oct'23</div>
+                        <ul class="role-list">
+                            <li>worked and surveyed upon recommendations systems and similarity measures</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Society Section -->
+        <div class="society-section">
+            <h2 class="section-title">crew.</h2>
+            <div class="society-grid">
+                <!-- Society Card 1 -->
+                <div class="society-card">
+                    <div class="society-content">
+                        <div class="society-logo">
+                            <img src="enactuslogo.png" alt="Enactus Logo">
+                        </div><br>
+                        <div class="society-years">2021 - 2025</div>
+                        <ul class="role-list">
+                            <li>mentored team of 14 members</li>
+                            <li>won multiple awards on different products</li>
+                            <li>participated in social activities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Society Card 2 -->
+                <!-- <div class="society-card">
+                    <div class="society-content">
+                        <div class="society-logo">
+                            <img src="ieee logo.png" alt="IEEE Logo">
+                        </div>
+                        <div class="society-years">2019 - 2021</div>
+                        <ul class="role-list">
+                            <li>Technical Content Lead</li>
+                            <li>Conducted weekly tech workshops</li>
+                            <li>Managed social media presence</li>
+                        </ul>
+                    </div>
+                </div> -->
+                
+                <!-- Society Card 3 -->
+                <!-- <div class="society-card">
+                    <div class="society-content">
+                        <div class="society-logo">
+                            <img src="acm-logo.png" alt="ACM Logo">
+                        </div>
+                        <div class="society-years">2017 - 2019</div>
+                        <ul class="role-list">
+                            <li>Community Engagement Officer</li>
+                            <li>Organized coding competitions</li>
+                            <li>Facilitated industry networking events</li>
+                        </ul>
+                    </div>
+                </div> -->
+            </div>
+        </div>
     </div>
+
+    <script src="recap.js"></script>
 </body>
 </html>
